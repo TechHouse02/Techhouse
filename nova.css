@@ -111,9 +111,13 @@ html, body {
 }
 .product-img-wrap {
   border-radius: var(--radius-lg);
-  background: #ffffff; /* White background to blend seamlessly with product photos */
+  background: #ffffff;
   padding: 24px;
   position: relative;
+}
+.product-img-wrap img {
+  mix-blend-mode: multiply;
+  filter: contrast(1.02);
 }
 .wishlist-btn {
   position: absolute;
@@ -167,9 +171,10 @@ html, body {
   margin-top: 16px;
 }
 .price-current {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-price);
   font-size: 1.1rem;
   font-weight: 700;
+  letter-spacing: 0.5px;
   color: #000000;
   background: #ffffff;
   padding: 4px 10px;

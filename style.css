@@ -39,6 +39,9 @@
   --radius-lg: 16px;
   --radius-xl: 24px;
   --radius-pill: 50px;
+
+  /* Typography */
+  --font-price: 'Plus Jakarta Sans', sans-serif;
 }
 
 /* ---- Reset & Base ---- */
@@ -522,7 +525,7 @@ img {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #f4f4f4; /* Classic Shopify light grey */
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -535,6 +538,8 @@ img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: contrast(1.02);
   transition: transform var(--transition-med);
 }
 
@@ -592,9 +597,11 @@ img {
   transition: all var(--transition-fast);
 }
 
-.color-swatch:hover {
-  transform: scale(1.1);
-  border-color: #000;
+.color-swatch:hover,
+.color-swatch.active {
+  transform: scale(1.15);
+  border-color: #000 !important;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25) !important;
 }
 
 /* Price & Cart */
@@ -612,9 +619,10 @@ img {
 }
 
 .price-current {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-price);
   font-size: 1.1rem;
   font-weight: 700;
+  letter-spacing: 0.5px;
   color: #000000;
   background: #ffffff;
   padding: 4px 10px;
@@ -624,6 +632,7 @@ img {
 }
 
 .price-old {
+  font-family: var(--font-price);
   font-size: 0.8rem;
   color: var(--text-muted);
   text-decoration: line-through;
@@ -1347,7 +1356,8 @@ img {
 .cart-item-img {
   width: 80px;
   height: 80px;
-  background: #fbfbfd;
+  background: #ffffff;
+  mix-blend-mode: multiply;
   border-radius: var(--radius-sm);
   object-fit: contain;
 }
@@ -1360,6 +1370,7 @@ img {
   margin-bottom: 4px;
 }
 .cart-item-price {
+  font-family: var(--font-price);
   font-weight: 700;
   color: #000;
 }
@@ -1382,6 +1393,7 @@ img {
   color: var(--text-secondary);
 }
 .cart-total {
+  font-family: var(--font-price);
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
@@ -1461,7 +1473,7 @@ img {
 }
 .qv-image-container {
   flex: 1;
-  background: #fbfbfd;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1470,6 +1482,7 @@ img {
 .qv-image-container img {
   max-height: 100%;
   object-fit: contain;
+  mix-blend-mode: multiply;
 }
 .qv-details {
   flex: 1;
@@ -1509,11 +1522,14 @@ img {
   gap: 12px;
 }
 .qv-current-price {
+  font-family: var(--font-price);
   font-size: 1.8rem;
   font-weight: 800;
+  letter-spacing: 0.5px;
   color: #000;
 }
 .qv-old-price {
+  font-family: var(--font-price);
   font-size: 1.2rem;
   color: var(--text-muted);
   text-decoration: line-through;
@@ -1792,6 +1808,7 @@ img {
   font-size: 0.85rem;
 }
 .fc-price {
+  font-family: var(--font-price);
   font-weight: 700;
   font-size: 0.9rem;
   color: var(--accent-primary);

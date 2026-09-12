@@ -338,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
   // =========================================
-  // 7. COLOR SWATCHES (Clean logic)
+  // 7. COLOR SWATCHES & DYNAMIC IMAGE SWITCHING
   // =========================================
   document.querySelectorAll('.product-colors').forEach(container => {
     container.querySelectorAll('.color-swatch').forEach(swatch => {
@@ -347,9 +347,28 @@ document.addEventListener('DOMContentLoaded', () => {
         container.querySelectorAll('.color-swatch').forEach(s => {
           s.style.borderColor = 'rgba(0,0,0,0.1)';
           s.style.boxShadow = 'none';
+          s.classList.remove('active');
         });
         this.style.borderColor = '#000';
         this.style.boxShadow = '0 0 0 1px #000';
+        this.classList.add('active');
+
+        // Dynamic Image Switch
+        const newImg = this.getAttribute('data-img');
+        if (newImg) {
+          const card = this.closest('.product-card');
+          if (card) {
+            const mainImg = card.querySelector('.product-img-wrap img');
+            if (mainImg && mainImg.getAttribute('src') !== newImg) {
+              mainImg.style.opacity = '0.3';
+              mainImg.style.transition = 'opacity 0.2s ease';
+              setTimeout(() => {
+                mainImg.src = newImg;
+                mainImg.style.opacity = '1';
+              }, 150);
+            }
+          }
+        }
       });
     });
   });
