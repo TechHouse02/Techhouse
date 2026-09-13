@@ -404,7 +404,7 @@ window.orderWhatsApp = function(btn) {
   const price = card.querySelector('.price-current').innerText;
   const imgSrc = card.querySelector('.product-img-wrap img').src;
   
-  const phone = "212694350619";
+  const phone = "212674494112";
   const message = `Bonjour, je veux commander ce produit:\n\n*Produit:* ${name}\n*Prix:* ${price}\n*Image:* ${imgSrc}\n\nMerci!`;
   
   const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
