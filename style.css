@@ -931,6 +931,18 @@ img {
     padding: 0 16px;
   }
 
+  .btn-whatsapp.icon-only,
+  .btn-insta.icon-only {
+    width: 34px;
+    height: 34px;
+  }
+
+  .btn-whatsapp.icon-only svg,
+  .btn-insta.icon-only svg {
+    width: 16px;
+    height: 16px;
+  }
+
   /* Nav mobile */
   .nav-container {
     padding: 0 12px;
